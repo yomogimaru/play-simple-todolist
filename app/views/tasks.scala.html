@@ -1,4 +1,4 @@
-@(tasks: List[String])
+@(tasks: List[Task])
 
 @main("TODO List") {
 
@@ -11,7 +11,7 @@
 <table border="1">
   <tr><th>タスク名</th><th>内容</th><th>削除</th></tr>
   @for(task <- tasks) {
-    <tr><td>@task</td><td>@task</td><td>削除</td></tr>
+    <tr><td>@task.title</td><td>@task.content</td><td>削除</td></tr>
   }
 </table>
 

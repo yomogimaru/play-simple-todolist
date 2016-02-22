@@ -14,7 +14,7 @@ class Application extends Controller {
   }
 
   def tasks = Action {
-    Ok(views.html.tasks(List("hoge", "fuga")))
+    Ok(views.html.tasks(Task.getAll))
   }
 
   def createFormView = Action {
@@ -37,8 +37,8 @@ class Application extends Controller {
   
   val createForm = Form(
     mapping(
-      "title"    -> text,
-      "contents" -> text
+      "title"   -> text,
+      "content" -> text
     )(CreateForm.apply)(CreateForm.unapply)
   )
 }

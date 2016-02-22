@@ -19,4 +19,16 @@ object Task extends SQLSyntaxSupport[Task] {
   def create(title: String, content: String)(implicit dbSession: DBSession = AutoSession) = {
     sql"insert into tasks (title, content) values (${title}, ${content})".update.apply()
   }
+  
+  def findById(id: Int): Option[Task] = {
+    DB readOnly { implicit session =>
+      sql"select id, title, content, createdAt from tasks where id = ${id}".map(Task(_)).single.apply()
+    }
+  }
+  
+  def getAll: List[Task] = {
+    DB readOnly { implicit session =>
+      sql"select id, title, content, createdAt from tasks".map(Task(_)).list.apply()
+    }
+  }
 }
