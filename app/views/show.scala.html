@@ -1,0 +1,21 @@
+@(findResult: Option[Task])
+
+@findResult match {
+  case Some(task) => {
+    @main(task.title) {
+      <h1>@task.title</h1>
+      <p>@task.content</p>
+      <p><a href="../tasks">タスク一覧へ戻る</a></p>
+    }
+  }
+  case None => {
+    @main("Task not found") {
+      <h1>Task not found</h1>
+      <p>
+        お探しのタスクは見つかりませんでした。<br />
+        未作成か、削除済みの可能性があります。
+      </p>
+      <p><a href="../tasks">タスク一覧へ戻る</a></p>
+    }
+  }
+}

@@ -11,7 +11,7 @@
 <table border="1">
   <tr><th>タスク名</th><th>内容</th><th>削除</th></tr>
   @for(task <- tasks) {
-    <tr><td>@task.title</td><td>@task.content</td><td>削除</td></tr>
+    <tr><td><a href="tasks/@task.id">@task.title</a></td><td>@task.content</td><td>削除</td></tr>
   }
 </table>
 

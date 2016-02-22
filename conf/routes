@@ -7,6 +7,7 @@ GET     /                           controllers.Application.index
 
 # TODO list
 GET	    /tasks                      controllers.Application.tasks
+GET     /tasks/:id                  controllers.Application.show(id: Int)
 GET     /create                     controllers.Application.createFormView
 POST    /create                     controllers.Application.create
 

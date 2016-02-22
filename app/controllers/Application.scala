@@ -16,6 +16,10 @@ class Application extends Controller {
   def tasks = Action {
     Ok(views.html.tasks(Task.getAll))
   }
+  
+  def show(id: Int) = Action {
+    Ok(views.html.show(Task.findById(id)))
+  }
 
   def createFormView = Action {
     Ok(views.html.create(createForm))
