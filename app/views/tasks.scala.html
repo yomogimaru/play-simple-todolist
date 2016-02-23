@@ -10,15 +10,15 @@
   <a href="@routes.Application.create">新規作成</a>
 </p>
 
-<table border="1">
-  <tr><th>タスク名</th><th>日時</th><th>削除</th></tr>
+<ul>
+  <li class="create-task"><a href="@routes.Application.create">新規作成</a></li>
   @for(task <- tasks) {
-    <tr>
-      <td><a href="@routes.Application.show(task.id)">@task.title</a></td>
-      <td>@task.createdAt.toString("yy/MM/dd HH:mm")</td>
-      <td><button onclick="$.ajax(jsRoutes.controllers.Application.delete(@task.id)).done(function() { location.reload(); })">削除</button></td>
-    </tr>
+    <li><a href="@routes.Application.show(task.id)">
+      <span class="task-title">@task.title</span>
+      <span class="task-created-at">@task.createdAt.toString("yy/MM/dd HH:mm")</span>
+      <button type="button" class="btn btn-danger" onclick="$.ajax(jsRoutes.controllers.Application.delete(@task.id)).done(function() { location.reload(); })">削除</button>
+    </a></li>
   }
-</table>
+</ul>
 
 }
