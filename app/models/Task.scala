@@ -27,7 +27,9 @@ object Task extends SQLSyntaxSupport[Task] {
   
   def getAll: List[Task] = {
     DB readOnly { implicit session =>
-      sql"select id, title, content, createdAt from tasks".map(Task(_)).list.apply()
+      sql"select id, title, content, createdAt from tasks".map(Task(_)).list.apply().sortWith(
+        (a, b) => a.createdAt.isAfter(b.createdAt)
+      )
     }
   }
   
