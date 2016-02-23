@@ -1,0 +1,109 @@
+body, nav, header, section, article, p, figure, figcaption, ul, li, dl, dt, dd, footer, address, div, a, h1, h2, h3, h4, h5, img {
+	padding:  0;
+	margin:   0;
+	border:   0;
+	font-weight:  normal;
+	font-style:   normal;
+}
+
+body {
+	position:     relative;
+	z-index:      0;
+  background:   #fff;
+  font-size:    2rem;
+  font-family:  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "ＭＳ Ｐゴシック", sans-serif;
+	color:        #000;
+}
+
+nav, header, article, footer, figcaption, figure {
+	display:  block;
+	clear:    left;
+}
+
+body section {
+  position: relative;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type:  none;
+}
+
+ul li {
+  overflow: hidden;
+  margin-bottom:  0.5rem;
+  background: #24d;
+  border-radius:          0.5rem;
+  -moz-border-radius:     0.5rem;
+  -webkit-border-radius:  0.5rem;
+}
+
+ul li:hover {
+  background: #248;
+}
+
+ul li a {
+  display: block;
+  padding: 0.5rem;
+  float: left;
+  width: 70%;
+  height: auto;
+  color:  #fff;
+  text-decoration:        none;
+}
+
+ul li a .task-title {
+  display: inline;
+  /*float:  left;
+  width:  50%;*/
+}
+
+ul li a .task-created-at {
+  display: inline;
+}
+
+ul li .task-delete {
+  float: left;
+  display: block;
+  width: 20%;
+  height: auto;
+  padding: 0.5rem;
+}
+
+ul li .task-delete button {
+  padding: 0.5rem;
+  background: #c32;
+  color: #fff;
+  font-size: 2.0rem;
+  border-style: none;
+  border-radius:          0.5rem;
+  -moz-border-radius:     0.5rem;
+  -webkit-border-radius:  0.5rem;
+}
+
+ul li .task-delete button:hover {
+  background: #a32;
+}
+
+ul li.create-task {
+  float: none;
+  background: #fff;
+  border: solid 1px #24d;
+  text-align: center;
+}
+
+ul li.create-task:hover {
+  background: #24d;
+  text-decoration:        none;
+}
+
+ul li.create-task a {
+  width: 100%;
+  color: #24d;
+  float: none;
+}
+
+ul li.create-task:hover a {
+  color: #fff;
+}
