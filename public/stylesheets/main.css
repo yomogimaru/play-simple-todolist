@@ -10,9 +10,11 @@ body {
 	position:     relative;
 	z-index:      0;
   background:   #fff;
-  font-size:    2rem;
+  font-size:    1.5rem;
   font-family:  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "ＭＳ Ｐゴシック", sans-serif;
 	color:        #000;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 nav, header, article, footer, figcaption, figure {
@@ -20,10 +22,9 @@ nav, header, article, footer, figcaption, figure {
 	clear:    left;
 }
 
-body section {
-  position: relative;
-  max-width: 30rem;
-  margin: 0 auto;
+h1 {
+  text-align: center;
+  font-size: 2rem;
 }
 
 ul {
@@ -37,73 +38,92 @@ ul li {
   border-radius:          0.5rem;
   -moz-border-radius:     0.5rem;
   -webkit-border-radius:  0.5rem;
+  display: table;
+  width: 100%;
 }
 
 ul li:hover {
-  background: #248;
+  background: #129;
 }
 
 ul li a {
-  display: block;
+  display: table-cell;
   padding: 0.5rem;
-  float: left;
-  width: 70%;
-  height: auto;
+  width: 85%;
   color:  #fff;
   text-decoration:        none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+ul li a div {
+  display: table;
+  width: 100%;
 }
 
 ul li a .task-title {
-  display: inline;
-  /*float:  left;
-  width:  50%;*/
+  display: table-cell;
+  vertical-align: middle;
+  width: 75%;
+  font-size: 1.8rem;
 }
 
 ul li a .task-created-at {
-  display: inline;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1rem;
+  text-align: center;
 }
 
 ul li .task-delete {
-  float: left;
-  display: block;
-  width: 20%;
-  height: auto;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
   padding: 0.5rem;
 }
 
 ul li .task-delete button {
-  padding: 0.5rem;
-  background: #c32;
+  padding: 0 0.5rem;
+  background: #c21;
   color: #fff;
-  font-size: 2.0rem;
+  font-size: 1.5rem;
   border-style: none;
   border-radius:          0.5rem;
   -moz-border-radius:     0.5rem;
   -webkit-border-radius:  0.5rem;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
 }
 
 ul li .task-delete button:hover {
-  background: #a32;
+  background: #e53;
 }
+
+/* === create task === */
 
 ul li.create-task {
-  float: none;
   background: #fff;
-  border: solid 1px #24d;
+  border: solid 1px #4d2;
   text-align: center;
-}
-
-ul li.create-task:hover {
-  background: #24d;
-  text-decoration:        none;
 }
 
 ul li.create-task a {
   width: 100%;
-  color: #24d;
-  float: none;
+  color: #4d2;
+  font-size: 1.75rem;
+}
+
+ul li.create-task:hover {
+  background: #4d2;
+  text-decoration:        none;
 }
 
 ul li.create-task:hover a {
   color: #fff;
+}
+
+/* ===  === */
+
+section.card {
 }

@@ -6,16 +6,16 @@
 
 <section>
 
-  <h1>タスク一覧</h1>
+  <h1>TODO List</h1>
 
   <ul>
     <li class="create-task"><a href="@routes.Application.create">新規作成</a></li>
     @for(task <- tasks) {
       <li>
-        <a href="@routes.Application.show(task.id)">
+        <a href="@routes.Application.show(task.id)"><div>
           <div class="task-title">@task.title</div>
           <div class="task-created-at">@task.createdAt.toString("yy/MM/dd HH:mm")</div>
-        </a>
+        </div></a>
         <div class="task-delete">
           <button type="button" onclick="$.ajax(
             jsRoutes.controllers.Application.delete(@task.id)
