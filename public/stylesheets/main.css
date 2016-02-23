@@ -7,14 +7,14 @@ body, nav, header, section, article, p, figure, figcaption, ul, li, dl, dt, dd, 
 }
 
 body {
+  margin:       0 auto;
+  max-width:    40rem;
 	position:     relative;
 	z-index:      0;
   background:   #fff;
   font-size:    1.5rem;
   font-family:  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "ＭＳ Ｐゴシック", sans-serif;
 	color:        #000;
-  max-width: 40rem;
-  margin: 0 auto;
 }
 
 nav, header, article, footer, figcaption, figure {
@@ -23,8 +23,8 @@ nav, header, article, footer, figcaption, figure {
 }
 
 h1 {
+  font-size:  2rem;
   text-align: center;
-  font-size: 2rem;
 }
 
 ul {
@@ -32,14 +32,14 @@ ul {
 }
 
 ul li {
-  overflow: hidden;
+  display:        table;
+  overflow:       hidden;
   margin-bottom:  0.5rem;
-  background: #24d;
+  width:          100%;
+  background:     #24d;
   border-radius:          0.5rem;
   -moz-border-radius:     0.5rem;
   -webkit-border-radius:  0.5rem;
-  display: table;
-  width: 100%;
 }
 
 ul li:hover {
@@ -47,53 +47,52 @@ ul li:hover {
 }
 
 ul li a {
-  display: table-cell;
-  padding: 0.5rem;
-  width: 85%;
-  color:  #fff;
-  text-decoration:        none;
-  display: table-cell;
-  vertical-align: middle;
+  display:  table-cell;
+  padding:  0.5rem;
+  width:    85%;
+  color:    #fff;
+  text-decoration:  none;
+  vertical-align:   middle;
 }
 
 ul li a div {
-  display: table;
-  width: 100%;
+  display:  table;
+  width:    100%;
 }
 
 ul li a .task-title {
-  display: table-cell;
+  display:    table-cell;
+  width:      75%;
+  font-size:  1.8rem;
   vertical-align: middle;
-  width: 75%;
-  font-size: 1.8rem;
 }
 
 ul li a .task-created-at {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 1rem;
+  display:    table-cell;
+  font-size:  1rem;
   text-align: center;
+  vertical-align: middle;
 }
 
 ul li .task-delete {
-  display: table-cell;
-  vertical-align: middle;
+  display:    table-cell;
+  padding:    0.5rem;
   text-align: right;
-  padding: 0.5rem;
+  vertical-align: middle;
 }
 
 ul li .task-delete button {
-  padding: 0 0.5rem;
-  background: #c21;
-  color: #fff;
-  font-size: 1.5rem;
+  padding:      0 0.5rem;
+  width:        100%;
+  height:       100%;
+  background:   #c21;
+  color:        #fff;
+  font-size:    1.5rem;
   border-style: none;
   border-radius:          0.5rem;
   -moz-border-radius:     0.5rem;
   -webkit-border-radius:  0.5rem;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
+  vertical-align:         middle;
 }
 
 ul li .task-delete button:hover {
@@ -104,26 +103,26 @@ ul li .task-delete button:hover {
 
 ul li.create-task {
   background: #fff;
-  border: solid 1px #4d2;
+  border:     solid 1px #4d2;
   text-align: center;
 }
 
 ul li.create-task a {
-  width: 100%;
-  color: #4d2;
-  font-size: 1.75rem;
+  width:      100%;
+  color:      #4d2;
+  font-size:  1.75rem;
 }
 
 ul li.create-task:hover {
-  background: #4d2;
-  text-decoration:        none;
+  background:       #4d2;
+  text-decoration:  none;
 }
 
 ul li.create-task:hover a {
-  color: #fff;
+  color:  #fff;
 }
 
 /* ===  === */
 
-section.card {
+#create-section {
 }
