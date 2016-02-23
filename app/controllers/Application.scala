@@ -56,6 +56,14 @@ class Application extends Controller {
       case _ => NotFound("<h1>Task not found</h1>")
     }
   }
+  
+  def javascriptRoutes = Action { implicit request =>
+    Ok(
+      Routes.javascriptRouter("jsRoutes")(
+        routes.javascript.Application.delete
+      )
+    ).as("text/javascript")
+  }
 }
 
 case class CreateForm(title: String, content:String)

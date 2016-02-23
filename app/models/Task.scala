@@ -2,7 +2,6 @@ package models
 
 import org.joda.time.DateTime
 import scalikejdbc._
-import scalikejdbc.SQLInterpolation._
 
 case class Task(id: Int, title: String, content: String, createdAt: DateTime)
 

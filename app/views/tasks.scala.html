@@ -14,11 +14,7 @@
     <tr>
       <td><a href="@routes.Application.show(task.id)">@task.title</a></td>
       <td>@task.content</td>
-      <td><button onclick="$.ajax({
-        method:  'DELETE', 
-        url:     '@routes.Application.delete(task.id)',
-        success: function() { location.reload(); }
-      })">削除</a></td>
+      <td><button onclick="$.ajax(jsRoutes.controllers.Application.delete(@task.id)).done(function() { location.reload(); })">削除</button></td>
     </tr>
   }
 </table>
