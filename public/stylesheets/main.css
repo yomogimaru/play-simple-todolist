@@ -17,6 +17,16 @@ body {
 	color:        #000;
 }
 
+textarea, input {
+  padding:      0.5rem;
+  font-size:    1.5rem;
+  font-family:  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "ＭＳ Ｐゴシック", sans-serif;
+	color:        #000;
+  box-sizing:         border-box;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+}
+
 nav, header, article, footer, figcaption, figure {
 	display:  block;
 	clear:    left;
@@ -44,6 +54,10 @@ h1 {
 }
 
 /* === list === */
+
+#list-section {
+  margin-bottom:  1rem;
+}
 
 #list-section h1 {
   color:  #24d;
@@ -155,6 +169,27 @@ h1 {
   -webkit-border-radius:  0.5rem;
 }
 
+#create-section form {
+  margin: 0 auto;
+  width:  30rem;
+}
+
+#create-section form dl {
+  margin-bottom:  0.5rem;
+}
+
+#create-section form dl dt {
+  text-align: left;
+}
+
+#create-section form dl dd {
+  text-align: center;
+}
+
+#create-section textarea, #create-section input {
+  width:  100%;
+}
+
 #create-section button {
   padding:      0.5rem;
   width:        100%;
@@ -188,7 +223,7 @@ h1 {
   padding:    0.5rem;
   background: #fff;
   color:      #000;
-  font-size:  1.2rem;
+  font-size:  1.5rem;
 }
 
 #show-section p.show-created-at {
