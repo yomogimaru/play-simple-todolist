@@ -1,8 +1,12 @@
 @(task: Task)
 
 @main(task.title) {
-  <h1>@task.title</h1>
-  <p>@task.content</p>
-  <p>@task.createdAt.toString("yy/MM/dd HH:mm")</p>
-  <p><a href="@routes.Application.tasks">タスク一覧へ戻る</a></p>
+  <section id="show-section">
+    <h1>@task.title</h1>
+    <p class="show-content">@task.content</p>
+    <p class="show-created-at">@task.createdAt.toString("yy/MM/dd HH:mm")</p>
+  </section>
+  <footer>
+    <a href="@routes.Application.tasks" class="a-button">戻る</a>
+  </footer>
 }

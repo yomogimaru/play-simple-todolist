@@ -5,15 +5,17 @@
 @import play.api.i18n.Messages.Implicits._
 
 @main("新規作成") {
-  <h1>新規作成</h1>
+  <section id="create-section">
+    <h1>新規作成</h1>
 
-  @helper.form(action = routes.Application.create) {
-    @inputText(createForm("title"))
-    @inputText(createForm("content"))
-    <button type="submit">作成</button>
-  }
-
-  <p>
-    <a href="@routes.Application.tasks">キャンセル</a>
-  </p>
+    @helper.form(action = routes.Application.create) {
+      @inputText(createForm("title"))
+      @inputText(createForm("content"))
+      <button type="submit">作成</button>
+    }
+  </section>
+  
+  <footer>
+    <a href="@routes.Application.tasks" class="a-button">キャンセル</a>
+  </footer>
 }

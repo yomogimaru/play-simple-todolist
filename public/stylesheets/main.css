@@ -22,16 +22,38 @@ nav, header, article, footer, figcaption, figure {
 	clear:    left;
 }
 
+body > * {
+  margin-bottom:  1rem;
+}
+
+body > *:first-child {
+  margin-top: 1rem;
+}
+
+body > section > * {
+  margin-bottom:  0.5rem;
+}
+
+body > section > *:last-child {
+  margin-bottom:  0;
+}
+
 h1 {
   font-size:  2rem;
   text-align: center;
 }
 
-ul {
+/* === list === */
+
+#list-section h1 {
+  color:  #24d;
+}
+
+#list-section ul {
   list-style-type:  none;
 }
 
-ul li {
+#list-section ul li {
   display:        table;
   overflow:       hidden;
   margin-bottom:  0.5rem;
@@ -42,11 +64,11 @@ ul li {
   -webkit-border-radius:  0.5rem;
 }
 
-ul li:hover {
+#list-section ul li:hover {
   background: #129;
 }
 
-ul li a {
+#list-section ul li a {
   display:  table-cell;
   padding:  0.5rem;
   width:    85%;
@@ -55,33 +77,33 @@ ul li a {
   vertical-align:   middle;
 }
 
-ul li a div {
+#list-section ul li a div {
   display:  table;
   width:    100%;
 }
 
-ul li a .task-title {
+#list-section ul li a .task-title {
   display:    table-cell;
   width:      75%;
   font-size:  1.8rem;
   vertical-align: middle;
 }
 
-ul li a .task-created-at {
+#list-section ul li a .task-created-at {
   display:    table-cell;
   font-size:  1rem;
   text-align: center;
   vertical-align: middle;
 }
 
-ul li .task-delete {
+#list-section ul li .task-delete {
   display:    table-cell;
   padding:    0.5rem;
   text-align: right;
   vertical-align: middle;
 }
 
-ul li .task-delete button {
+#list-section ul li .task-delete button {
   padding:      0 0.5rem;
   width:        100%;
   height:       100%;
@@ -95,34 +117,108 @@ ul li .task-delete button {
   vertical-align:         middle;
 }
 
-ul li .task-delete button:hover {
+#list-section ul li .task-delete button:hover {
   background: #e53;
 }
 
-/* === create task === */
+/* create task */
 
-ul li.create-task {
+#list-section ul li.create-task {
   background: #fff;
   border:     solid 1px #4d2;
   text-align: center;
 }
 
-ul li.create-task a {
+#list-section ul li.create-task a {
   width:      100%;
   color:      #4d2;
   font-size:  1.75rem;
 }
 
-ul li.create-task:hover {
+#list-section ul li.create-task:hover {
   background:       #4d2;
   text-decoration:  none;
 }
 
-ul li.create-task:hover a {
+#list-section ul li.create-task:hover a {
   color:  #fff;
 }
 
-/* ===  === */
+/* === create new task === */
 
 #create-section {
+  padding:    1rem;
+  background: #4d2;
+  color:      #fff;
+  border-radius:          0.5rem;
+  -moz-border-radius:     0.5rem;
+  -webkit-border-radius:  0.5rem;
+}
+
+#create-section button {
+  padding:      0.5rem;
+  width:        100%;
+  background:   #2a1;
+  color:        #fff;
+  font-size:    1.5rem;
+  border-style: none;
+  border-radius:          0.5rem;
+  -moz-border-radius:     0.5rem;
+  -webkit-border-radius:  0.5rem;
+  vertical-align:         middle;
+}
+
+#create-section button:hover {
+  background:   #6f3;
+  color:        #fff;
+}
+
+/* === show task === */
+
+#show-section {
+  padding:    1rem;
+  background: #24d;
+  color:      #fff;
+  border-radius:          0.5rem;
+  -moz-border-radius:     0.5rem;
+  -webkit-border-radius:  0.5rem;
+}
+
+#show-section p.show-content {
+  padding:    0.5rem;
+  background: #fff;
+  color:      #000;
+  font-size:  1.2rem;
+}
+
+#show-section p.show-created-at {
+  font-size:  1.0rem;
+  text-align: right;
+}
+
+/* === footer === */
+
+footer {
+  text-align: center;
+}
+
+/* === anchor button === */
+
+a.a-button {
+  display:    inline-block;
+  padding:    0.5rem 1rem;
+  background: #fff;
+  color:      #24d;
+  font-size:  1.5rem;
+  border:     solid 1px #24d;
+  border-radius:          0.5rem;
+  -moz-border-radius:     0.5rem;
+  -webkit-border-radius:  0.5rem;
+  text-decoration:        none;
+  text-align:             center;
+}
+
+a.a-button:hover {
+  background: #24d;
+  color:      #fff;
 }
