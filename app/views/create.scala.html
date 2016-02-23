@@ -9,8 +9,8 @@
     <h1>新規作成</h1>
 
     @helper.form(action = routes.Application.create) {
-      @inputText(createForm("title"))
-      @inputText(createForm("content"))
+      @inputText(field = createForm("title"), args = '_label -> "タイトル")
+      @textarea(field = createForm("content"), args = '_label -> "内容", 'rows -> 4)
       <button type="submit">作成</button>
     }
   </section>
