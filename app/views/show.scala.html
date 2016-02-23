@@ -3,5 +3,6 @@
 @main(task.title) {
   <h1>@task.title</h1>
   <p>@task.content</p>
+  <p>@task.createdAt.toString("yy/MM/dd HH:mm")</p>
   <p><a href="@routes.Application.tasks">タスク一覧へ戻る</a></p>
 }
