@@ -5,13 +5,21 @@
 <h1>タスク一覧</h1>
 
 <p>
-  <a href="create">新規作成</a>
+  <a href="@routes.Application.create">新規作成</a>
 </p>
 
 <table border="1">
   <tr><th>タスク名</th><th>内容</th><th>削除</th></tr>
   @for(task <- tasks) {
-    <tr><td><a href="tasks/@task.id">@task.title</a></td><td>@task.content</td><td>削除</td></tr>
+    <tr>
+      <td><a href="@routes.Application.show(task.id)">@task.title</a></td>
+      <td>@task.content</td>
+      <td><button onclick="$.ajax({
+        method:  'DELETE', 
+        url:     '@routes.Application.delete(task.id)',
+        success: function() { location.reload(); }
+      })">削除</a></td>
+    </tr>
   }
 </table>
 

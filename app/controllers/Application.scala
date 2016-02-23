@@ -18,7 +18,10 @@ class Application extends Controller {
   }
   
   def show(id: Int) = Action {
-    Ok(views.html.show(Task.findById(id)))
+    Task.findById(id) match {
+      case Some(task) => Ok(views.html.show(task))
+      case _          => NotFound("<h1>Task not found</h1>")
+    }
   }
 
   def createFormView = Action {
@@ -27,9 +30,7 @@ class Application extends Controller {
   
   def create = Action { implicit request =>
     createForm.bindFromRequest.fold(
-      error => {
-        BadRequest("Error")
-      },
+      error => BadRequest("Error"),
       {
         case CreateForm(t, c) => {
           Task.create(t, c)
@@ -45,6 +46,16 @@ class Application extends Controller {
       "content" -> text
     )(CreateForm.apply)(CreateForm.unapply)
   )
+  
+  def delete(id: Int) = Action {
+    Task.findById(id) match {
+      case Some(task) => {
+        Task.delete(task.id)
+        Redirect(routes.Application.tasks)
+      }
+      case _ => NotFound("<h1>Task not found</h1>")
+    }
+  }
 }
 
 case class CreateForm(title: String, content:String)

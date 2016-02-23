@@ -5,17 +5,15 @@
 @import play.api.i18n.Messages.Implicits._
 
 @main("新規作成") {
+  <h1>新規作成</h1>
 
-<h1>新規作成</h1>
+  @helper.form(action = routes.Application.create) {
+    @inputText(createForm("title"))
+    @inputText(createForm("content"))
+    <input type="submit" value="作成">
+  }
 
-@helper.form(action = routes.Application.create) {
-  @inputText(createForm("title"))
-  @inputText(createForm("content"))
-  <input type="submit" value="作成">
-}
-
-<p>
-  <a href="tasks">タスク一覧へ戻る</a>
-</p>
-
+  <p>
+    <a href="@routes.Application.tasks">キャンセル</a>
+  </p>
 }

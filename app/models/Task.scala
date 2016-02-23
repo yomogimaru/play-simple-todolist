@@ -31,4 +31,8 @@ object Task extends SQLSyntaxSupport[Task] {
       sql"select id, title, content, createdAt from tasks".map(Task(_)).list.apply()
     }
   }
+  
+  def delete(id: Int)(implicit dbSession: DBSession = AutoSession) = {
+    sql"delete from tasks where id = ${id};".update.apply()
+  }
 }

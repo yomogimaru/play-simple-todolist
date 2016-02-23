@@ -10,6 +10,7 @@ GET	    /tasks                      controllers.Application.tasks
 GET     /tasks/:id                  controllers.Application.show(id: Int)
 GET     /create                     controllers.Application.createFormView
 POST    /create                     controllers.Application.create
+DELETE  /delete/:id                 controllers.Application.delete(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
