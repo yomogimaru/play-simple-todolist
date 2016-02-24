@@ -10,10 +10,12 @@ import models._
 
 class Application extends Controller {
 
+  // タスク一覧
   def tasks = Action {
     Ok(views.html.tasks(Task.getAll))
   }
   
+  // タスクの詳細表示(対象が見つからなかったらnot found)
   def show(id: Int) = Action {
     Task.findById(id) match {
       case Some(task) => Ok(views.html.show(task))
@@ -21,10 +23,12 @@ class Application extends Controller {
     }
   }
 
+  // 新規作成画面
   def createFormView = Action {
     Ok(views.html.create(createForm))
   }
   
+  // タスクを作成し、タスク一覧へ移動
   def create = Action { implicit request =>
     createForm.bindFromRequest.fold(
       error => BadRequest("Error"),
@@ -37,6 +41,7 @@ class Application extends Controller {
     )
   }
   
+  // フォームのデータとcase classとのマッピング
   val createForm = Form(
     mapping(
       "title"   -> text,
@@ -44,6 +49,7 @@ class Application extends Controller {
     )(CreateForm.apply)(CreateForm.unapply)
   )
   
+  // タスクの削除(対象が見つからなかったらnot found)
   def delete(id: Int) = Action {
     Task.findById(id) match {
       case Some(task) => {
@@ -54,6 +60,7 @@ class Application extends Controller {
     }
   }
   
+  // JSルーティング(現在deleteのみ)
   def javascriptRoutes = Action { implicit request =>
     Ok(
       JavaScriptReverseRouter("jsRoutes")(
@@ -63,4 +70,5 @@ class Application extends Controller {
   }
 }
 
+// フォーム情報を受け取るデータ構造
 case class CreateForm(title: String, content:String)
