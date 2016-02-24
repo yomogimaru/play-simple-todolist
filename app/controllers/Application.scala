@@ -4,6 +4,7 @@ import play.api._
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
+import play.api.routing._
 
 import models._
 
@@ -59,7 +60,7 @@ class Application extends Controller {
   
   def javascriptRoutes = Action { implicit request =>
     Ok(
-      Routes.javascriptRouter("jsRoutes")(
+      JavaScriptReverseRouter("jsRoutes")(
         routes.javascript.Application.delete
       )
     ).as("text/javascript")
